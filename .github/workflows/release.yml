@@ -27,7 +27,7 @@ concurrency:
 
 jobs:
   release:
-    uses: mateusrdp/oxiguitar/.github/workflows/plugin-release.yml@99722a630b8bf1d886f74281e092c2399cd38a18
+    uses: mateusrdp/oxiguitar/.github/workflows/plugin-release.yml@dad955db8ddfe8dceee32bf6e1799fc424dbca6f
     with:
       name: coreaudio
       title: "Core Audio"
@@ -35,6 +35,6 @@ jobs:
       # ci.yml has run the tests on six systems.
       test: false
       systems: macos
-      tools-ref: 99722a630b8bf1d886f74281e092c2399cd38a18
+      tools-ref: dad955db8ddfe8dceee32bf6e1799fc424dbca6f
     permissions:
       contents: write

@@ -19,10 +19,10 @@ permissions:
 
 jobs:
   publish:
-    uses: mateusrdp/oxiguitar/.github/workflows/plugin-publish.yml@99722a630b8bf1d886f74281e092c2399cd38a18
+    uses: mateusrdp/oxiguitar/.github/workflows/plugin-publish.yml@dad955db8ddfe8dceee32bf6e1799fc424dbca6f
     with:
       name: coreaudio
       tag: ${{ inputs.tag }}
       systems: macos
-      tools-ref: 99722a630b8bf1d886f74281e092c2399cd38a18
+      tools-ref: dad955db8ddfe8dceee32bf6e1799fc424dbca6f
     secrets: inherit
