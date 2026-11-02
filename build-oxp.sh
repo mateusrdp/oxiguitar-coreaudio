@@ -6,7 +6,7 @@
 #
 #   dist/audio-coreaudio-VERSION-SYSTEM-ARCH.oxp
 #
-# such as dist/audio-coreaudio-1.0.0-macos-universal.oxp, named the way OxiGuitar's plugins
+# such as dist/audio-coreaudio-0.1.0-macos-universal.oxp, named the way OxiGuitar's plugins
 # are (docs/plugins/template in github.com/mateusrdp/oxiguitar). This plugin is for macOS only (its manifest says so): it builds both processors and joins them into one universal file (needs both Rust targets: rustup target add aarch64-apple-darwin x86_64-apple-darwin).
 # .github/workflows/release.yml runs it.
 
