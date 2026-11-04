@@ -1,5 +1,5 @@
 # Tells the package repositories, the Homebrew tap and winget when the
-# maintainer publishes a release (#165). The work is oxiguitar's reusable
+# maintainer publishes a release (#165). The work is oxiguitar-packages' reusable
 # workflow plugin-publish.yml: it checks the release holds every file and
 # sum, then sends the event. It needs the secrets PACKAGES_TOKEN and
 # WINGET_TOKEN; without them nothing is sent and the run says so.
@@ -19,10 +19,9 @@ permissions:
 
 jobs:
   publish:
-    uses: mateusrdp/oxiguitar/.github/workflows/plugin-publish.yml@dad955db8ddfe8dceee32bf6e1799fc424dbca6f
+    uses: mateusrdp/oxiguitar-packages/.github/workflows/plugin-publish.yml@main
     with:
       name: coreaudio
       tag: ${{ inputs.tag }}
       systems: macos
-      tools-ref: dad955db8ddfe8dceee32bf6e1799fc424dbca6f
     secrets: inherit
