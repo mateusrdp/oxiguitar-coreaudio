@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/ci.yml",
+      "type": "pipeline",
+      "name": "CI",
+      "filePath": ".github/workflows/ci.yml",
+      "summary": "GitHub Actions workflow running formatting checks, linting (Clippy + docs), tests on six platforms (Linux x86_64, Linux ARM64, Windows x86_64, Windows ARM64, macOS), licence/advisory checks via cargo-deny, and DCO sign-off validation on pull requests.",
+      "tags": [
+        "ci-cd",
+        "testing",
+        "linting",
+        "deployment"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "pipeline:.github/workflows/publish.yml",
+      "type": "pipeline",
+      "name": "Publish",
+      "filePath": ".github/workflows/publish.yml",
+      "summary": "Reusable workflow trigger that publishes release artifacts to package repositories and winget when a GitHub release is published, using secrets PACKAGES_TOKEN and WINGET_TOKEN.",
+      "tags": [
+        "ci-cd",
+        "deployment",
+        "publishing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/release.yml",
+      "type": "pipeline",
+      "name": "Release",
+      "filePath": ".github/workflows/release.yml",
+      "summary": "Reusable workflow that test-builds the .oxp plugin on each system for PRs/develop/main pushes, and creates draft releases from v* tags containing zip, .deb, .rpm, Windows installer, macOS .pkg, and SHA256SUMS.",
+      "tags": [
+        "ci-cd",
+        "release",
+        "artifact-building"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG.md",
+      "filePath": "CHANGELOG.md",
+      "summary": "Version history tracking unreleased changes and the initial 0.1.0 release with added and changed items.",
+      "tags": [
+        "documentation",
+        "versioning",
+        "changelog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Claude-specific working guidelines for the OxiGuitar Core Audio plugin project, covering standing rules and repository conventions.",
+      "tags": [
+        "documentation",
+        "ai-assistant",
+        "conventions"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "Contribution guidelines covering branch-and-pull-request workflow and Developer Certificate of Origin (DCO) sign-off requirements.",
+      "tags": [
+        "documentation",
+        "development",
+        "contribution"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:Cargo.toml",
+      "type": "config",
+      "name": "Cargo.toml",
+      "filePath": "Cargo.toml",
+      "summary": "Rust package manifest defining oxiguitar-audio-coreaudio-plugin v0.1.0 with dependencies on oxiguitar-plugin SDK (v0.11.0), oxiguitar-audio-cpal, and cpal 0.18, plus cargo-deny linting and thin LTO release profile.",
+      "tags": [
+        "configuration",
+        "build-system",
+        "rust",
+        "dependencies"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview documenting the Core Audio output plugin for OxiGuitar, including install instructions, build steps, history, and GPL-3.0-or-later license.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "overview"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:build-oxp.sh",
+      "type": "file",
+      "name": "build-oxp.sh",
+      "filePath": "build-oxp.sh",
+      "summary": "Build script that compiles the crate as a cdylib with the oxp feature to produce the audio-coreaudio.oxp plugin file.",
+      "tags": [
+        "script",
+        "build-system",
+        "artifact-building"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:clippy.toml",
+      "type": "config",
+      "name": "clippy.toml",
+      "filePath": "clippy.toml",
+      "summary": "Clippy linter configuration file for the Rust project.",
+      "tags": [
+        "configuration",
+        "linting",
+        "rust"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:deny.toml",
+      "type": "config",
+      "name": "deny.toml",
+      "filePath": "deny.toml",
+      "summary": "Cargo-deny configuration governing dependency graph analysis, security advisories, license compliance, banned crates, and allowed sources.",
+      "tags": [
+        "configuration",
+        "security",
+        "licensing",
+        "linting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:manifest.json",
+      "type": "config",
+      "name": "manifest.json",
+      "filePath": "manifest.json",
+      "summary": "OxiGuitar plugin manifest declaring interface version 1.3, plugin ID oxiguitar.audio-coreaudio, macOS-only conditions, and the audio-device service coreaudio with priority 10.",
+      "tags": [
+        "configuration",
+        "plugin-manifest",
+        "metadata"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:rustfmt.toml",
+      "type": "config",
+      "name": "rustfmt.toml",
+      "filePath": "rustfmt.toml",
+      "summary": "Rust formatter configuration file for consistent code style.",
+      "tags": [
+        "configuration",
+        "formatting",
+        "rust"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.github/dependabot.yml",
+      "type": "config",
+      "name": "dependabot.yml",
+      "filePath": ".github/dependabot.yml",
+      "summary": "Dependabot configuration for automated dependency updates in the GitHub repository.",
+      "tags": [
+        "configuration",
+        "automation",
+        "dependency-management"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:.github/pull_request_template.md",
+      "type": "document",
+      "name": "pull_request_template.md",
+      "filePath": ".github/pull_request_template.md",
+      "summary": "GitHub pull request template with sections for describing changes, testing instructions, and a checklist.",
+      "tags": [
+        "documentation",
+        "contribution",
+        "templates"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/check-dco.sh",
+      "type": "file",
+      "name": "check-dco.sh",
+      "filePath": "scripts/check-dco.sh",
+      "summary": "Shell script that checks Developer Certificate of Origin sign-offs on commits between two SHA references for pull request validation.",
+      "tags": [
+        "script",
+        "compliance",
+        "dco"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/lib.rs",
+      "type": "file",
+      "name": "lib.rs",
+      "filePath": "src/lib.rs",
+      "summary": "Core plugin implementation: the Audio struct implements Plugin and Service traits, providing Core Audio playback through cpal's Core Audio host. macOS-only at runtime, cross-platform build.",
+      "tags": [
+        "entry-point",
+        "plugin",
+        "audio",
+        "core",
+        "tested"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/lib.rs:Audio::start",
+      "type": "function",
+      "name": "start",
+      "filePath": "src/lib.rs",
+      "lineRange": [
+        20,
+        31
+      ],
+      "summary": "Plugin initialization that creates a CpalDevice with Core Audio host on macOS; no-op on other platforms.",
+      "tags": [
+        "initialization",
+        "plugin-lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib.rs:Audio::service",
+      "type": "function",
+      "name": "service",
+      "filePath": "src/lib.rs",
+      "lineRange": [
+        33,
+        35
+      ],
+      "summary": "Returns self as the Service implementation when queried for interface audio-device with id coreaudio.",
+      "tags": [
+        "service-discovery",
+        "plugin-lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib.rs:Audio::probe",
+      "type": "function",
+      "name": "probe",
+      "filePath": "src/lib.rs",
+      "lineRange": [
+        39,
+        44
+      ],
+      "summary": "Probes Core Audio availability via cpal device; returns Unavailable on non-macOS platforms.",
+      "tags": [
+        "capability-check",
+        "platform-gating"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib.rs:Audio::call",
+      "type": "function",
+      "name": "call",
+      "filePath": "src/lib.rs",
+      "lineRange": [
+        46,
+        57
+      ],
+      "summary": "Dispatches audio device method calls through cpal; returns Unsupported error on non-macOS platforms.",
+      "tags": [
+        "audio-operations",
+        "platform-gating"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/contract.rs",
+      "type": "file",
+      "name": "contract.rs",
+      "filePath": "tests/contract.rs",
+      "summary": "Contract test suite that builds the .oxp plugin file and validates it through OxiGuitar's plugin host, ensuring the plugin meets the interface specification.",
+      "tags": [
+        "test",
+        "contract-testing",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/contract.rs:the_plugin_file_keeps_the_contract",
+      "type": "function",
+      "name": "the_plugin_file_keeps_the_contract",
+      "filePath": "tests/contract.rs",
+      "lineRange": [
+        15,
+        30
+      ],
+      "summary": "Builds the .oxp package and runs the full contract check suite, asserting all checks pass.",
+      "tags": [
+        "test",
+        "integration-test"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "pipeline:.github/workflows/ci.yml",
+      "target": "pipeline:.github/workflows/release.yml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "pipeline:.github/workflows/release.yml",
+      "target": "pipeline:.github/workflows/publish.yml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:Cargo.toml",
+      "target": "document:README.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:deny.toml",
+      "target": "config:Cargo.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:clippy.toml",
+      "target": "config:Cargo.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:rustfmt.toml",
+      "target": "config:Cargo.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:build-oxp.sh",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "config:deny.toml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:manifest.json",
+      "target": "document:README.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "function:src/lib.rs:Audio::start",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "function:src/lib.rs:Audio::service",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "function:src/lib.rs:Audio::probe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "function:src/lib.rs:Audio::call",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/contract.rs",
+      "target": "function:tests/contract.rs:the_plugin_file_keeps_the_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/contract.rs",
+      "target": "file:src/lib.rs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "file:tests/contract.rs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Direction corrected (was test \u2192 production)"
+    },
+    {
+      "source": "file:scripts/check-dco.sh",
+      "target": "pipeline:.github/workflows/ci.yml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:core",
+      "name": "Core Plugin Layer",
+      "description": "The main plugin implementation: the Audio struct implementing OxiGuitar's Plugin and Service traits for Core Audio playback on macOS via cpal.",
+      "nodeIds": [
+        "file:src/lib.rs",
+        "function:src/lib.rs:Audio::start",
+        "function:src/lib.rs:Audio::service",
+        "function:src/lib.rs:Audio::probe",
+        "function:src/lib.rs:Audio::call"
+      ]
+    },
+    {
+      "id": "layer:ci-cd",
+      "name": "CI/CD Layer",
+      "description": "GitHub Actions workflows for continuous integration (linting, testing on six platforms, licence checks), release builds, and artifact publishing.",
+      "nodeIds": [
+        "pipeline:.github/workflows/ci.yml",
+        "pipeline:.github/workflows/publish.yml",
+        "pipeline:.github/workflows/release.yml"
+      ]
+    },
+    {
+      "id": "layer:project-support",
+      "name": "Project Support",
+      "description": "Project configuration (Cargo.toml, clippy, deny, rustfmt, manifest), documentation (README, CHANGELOG, CONTRIBUTING, CLAUDE guidelines), build scripts, and automation (dependabot, DCO check).",
+      "nodeIds": [
+        "config:Cargo.toml",
+        "document:CHANGELOG.md",
+        "document:CLAUDE.md",
+        "document:CONTRIBUTING.md",
+        "document:README.md",
+        "file:build-oxp.sh",
+        "config:clippy.toml",
+        "config:deny.toml",
+        "config:manifest.json",
+        "config:rustfmt.toml",
+        "config:.github/dependabot.yml",
+        "document:.github/pull_request_template.md",
+        "file:scripts/check-dco.sh"
+      ]
+    },
+    {
+      "id": "layer:test",
+      "name": "Test Layer",
+      "description": "Contract test suite that builds the .oxp plugin file and validates it through OxiGuitar's plugin host to ensure interface compliance.",
+      "nodeIds": [
+        "file:tests/contract.rs",
+        "function:tests/contract.rs:the_plugin_file_keeps_the_contract"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Project Overview",
+      "description": "The README introduces oxiguitar-coreaudio as the Core Audio output plugin for OxiGuitar, a guitar tablature and score viewer. It explains that the plugin plays OxiGuitar's sound through macOS's Core Audio system, producing a single universal .oxp file. The README also covers installation, build steps, and the GPL-3.0-or-later license.",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Plugin Manifest",
+      "description": "The manifest.json declares the plugin's identity: interface version 1.3, ID oxiguitar.audio-coreaudio, macOS-only conditions, and a single audio-device service (coreaudio) with priority 10. This file is the contract between the plugin and the OxiGuitar host.",
+      "nodeIds": [
+        "config:manifest.json"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Build Configuration",
+      "description": "Cargo.toml defines the package oxiguitar-audio-coreaudio-plugin v0.1.0 with Rust edition 2024 and MSRV 1.99. Dependencies include the OxiGuitar plugin SDK (v0.11.0 via git tag), oxiguitar-audio-cpal for shared audio code, and cpal 0.18 for Core Audio. The release profile uses thin LTO and symbol stripping for small binaries.",
+      "nodeIds": [
+        "config:Cargo.toml",
+        "config:clippy.toml",
+        "config:deny.toml",
+        "config:rustfmt.toml"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Core Plugin Implementation",
+      "description": "src/lib.rs is the heart of the plugin. The Audio struct implements OxiGuitar's Plugin trait (start, service) and Service trait (probe, call). On macOS it creates a CpalDevice wrapping cpal's Core Audio host; on other platforms the methods return Unavailable or Unsupported, making this a cross-platform build with macOS-only runtime.",
+      "nodeIds": [
+        "file:src/lib.rs",
+        "function:src/lib.rs:Audio::start",
+        "function:src/lib.rs:Audio::service",
+        "function:src/lib.rs:Audio::probe",
+        "function:src/lib.rs:Audio::call"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Build Script",
+      "description": "build-oxp.sh compiles the crate as a cdylib with the oxp feature flag, producing the distributable audio-coreaudio.oxp plugin file. This is the command shown in the README for building the plugin.",
+      "nodeIds": [
+        "file:build-oxp.sh"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "Contract Testing",
+      "description": "tests/contract.rs builds the .oxp file and validates it through OxiGuitar's plugin host, asserting that the plugin meets the interface specification. This is gated behind #[cfg(target_os = \"macos\")] since the plugin only runs on macOS.",
+      "nodeIds": [
+        "file:tests/contract.rs",
+        "function:tests/contract.rs:the_plugin_file_keeps_the_contract"
+      ]
+    },
+    {
+      "order": 7,
+      "title": "CI Pipeline",
+      "description": ".github/workflows/ci.yml runs formatting checks, Clippy linting on the MSRV, documentation builds, tests on six platforms (Linux x86_64, Linux ARM64, Windows x86_64, Windows ARM64, macOS), cargo-deny licence/advisory checks, and DCO sign-off validation on pull requests. A ci-success gate ensures all jobs pass before merging.",
+      "nodeIds": [
+        "pipeline:.github/workflows/ci.yml"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "Release & Publishing",
+      "description": "The release workflow builds the .oxp on each system for PRs/develop/main (test builds) and creates draft releases from v* tags containing zip, .deb, .rpm, Windows installer, macOS .pkg, and SHA256SUMS. The publish workflow then sends these to package repositories and winget when a release is published.",
+      "nodeIds": [
+        "pipeline:.github/workflows/release.yml",
+        "pipeline:.github/workflows/publish.yml"
+      ]
+    },
+    {
+      "order": 9,
+      "title": "Development Workflow",
+      "description": "CONTRIBUTING.md covers the branch-and-pull-request workflow and DCO sign-off requirements. The DCO check script verifies commit sign-offs, and dependabot automates dependency updates. The pull request template guides contributors on describing changes and testing instructions.",
+      "nodeIds": [
+        "document:CONTRIBUTING.md",
+        "file:scripts/check-dco.sh",
+        "config:.github/dependabot.yml",
+        "document:.github/pull_request_template.md"
+      ]
+    }
+  ]
+}
