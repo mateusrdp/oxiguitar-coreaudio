@@ -1,0 +1,16 @@
+{
+  "repository": "mateusrdp/oxiguitar-coreaudio",
+  "os": [
+    "macos"
+  ],
+  "plugins": [
+    {
+      "name": "audio-coreaudio",
+      "package": "oxiguitar-audio-coreaudio-plugin",
+      "library": "oxiguitar_audio_coreaudio_plugin",
+      "os": [
+        "macos"
+      ]
+    }
+  ]
+}
