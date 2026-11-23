@@ -19,7 +19,7 @@ Every [release](https://github.com/mateusrdp/oxiguitar-coreaudio/releases) holds
 
 ## Build and test
 
-Rust 1.99 or later from [rustup](https://rustup.rs). The plugin SDK comes from OxiGuitar's repository by git tag (`v0.11.0`); nothing of OxiGuitar's is on crates.io.
+Rust 1.99 or later from [rustup](https://rustup.rs). The plugin SDK (`v0.11.0`) and the shared audio layer, [oxiguitar-audio-cpal](https://github.com/mateusrdp/oxiguitar-audio-cpal) (`v0.1.0`), come from their repositories by git tag; nothing of OxiGuitar's is on crates.io. The SDK tag must be the one oxiguitar-audio-cpal itself uses, so the two tags and cpal's version move together, the audio layer first. After moving any of them, run `cargo update -p oxiguitar-audio-cpal -p cpal` and commit `Cargo.lock`. `deny.toml` allows both git sources. What a repository that depends on the audio layer must do is on its [How to use it](https://mateusrdp.github.io/oxiguitar-audio-cpal/use-cases.html) page.
 
 ```sh
 cargo test          # unit tests, and the contract suite on the built .oxp file
