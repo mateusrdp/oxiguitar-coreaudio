@@ -2,7 +2,7 @@
 
 Everything this plugin does, and the tests that check it. The test names are the ones `cargo test` prints; a name after `macos:` is a test that only runs on Core Audio's system. `scripts/test-all.py` fails when a feature here names no test, or names a test that doesn't exist, so a new feature gets its row and its tests in the same pull request (the [Testing](testing.md) page says how to run them).
 
-The plugin is a thin layer: opening, feeding and closing the output stream is OxiGuitar's own `oxiguitar-audio-cpal` code (through [cpal](https://github.com/RustAudio/cpal)), which this plugin uses as released. Hearing the sound needs a sound card, so the tests check everything up to it.
+The plugin is a thin layer: opening, feeding and closing the output stream is OxiGuitar's own [`oxiguitar-audio-cpal`](https://mateusrdp.github.io/oxiguitar-audio-cpal/) code (through [cpal](https://github.com/RustAudio/cpal)), which this plugin uses as released. Hearing the sound needs a sound card, so the tests check everything up to it.
 
 | Feature | What it does | Tests |
 | --- | --- | --- |
