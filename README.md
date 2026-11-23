@@ -5,7 +5,7 @@ The Core Audio output plugin for [OxiGuitar](https://github.com/mateusrdp/oxigui
 In plain words: OxiGuitar works out the sound, and an output plugin hands it to the operating system's sound system on time, batch after batch. Every system has its own sound system, so each gets its own plugin. The [manual](https://mateusrdp.github.io/oxiguitar-coreaudio/) explains latency and buffers.
 
 - Plugin file `audio-coreaudio.oxp`, id `oxiguitar.audio-coreaudio`, macOS only: one universal file for Apple Silicon and Intel.
-- It shares its code with the other outputs, oxiguitar-pipewire, oxiguitar-alsa and oxiguitar-wasapi: a stream on one of cpal's hosts, in `oxiguitar-audio-cpal`, which lives in the OxiGuitar repository and is tagged with the SDK.
+- It shares its code with the other outputs, oxiguitar-pipewire, oxiguitar-alsa and oxiguitar-wasapi: a stream on one of cpal's hosts, in [oxiguitar-audio-cpal](https://github.com/mateusrdp/oxiguitar-audio-cpal), which this plugin depends on by tag.
 - It plays sound only on your machine: it uploads and downloads nothing.
 - The macOS `.pkg` and the Homebrew cask are not signed or notarised (no Apple fees): the `.pkg` installs for you alone, without a password, and a file installed that way is not quarantined.
 

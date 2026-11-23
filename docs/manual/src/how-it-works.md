@@ -12,7 +12,7 @@ The strategy is one output plugin for each system's own sound API, so each can b
 
 ## Left out on purpose
 
-- **A sound library of our own.** [cpal](https://github.com/RustAudio/cpal), the Rust audio library, already speaks every system's sound API. All four output plugins share a thin layer over it in OxiGuitar's repository.
+- **A sound library of our own.** [cpal](https://github.com/RustAudio/cpal), the Rust audio library, already speaks every system's sound API. All four output plugins share a thin layer over it, [oxiguitar-audio-cpal](https://mateusrdp.github.io/oxiguitar-audio-cpal/).
 - **One plugin for every system.** Each system's output is a plugin of its own, so each is built, tested, updated and left out on its own, and a Linux install carries no Windows code.
 - **Recording.** The output plugins only play. OxiGuitar has no audio input.
 
