@@ -13,6 +13,7 @@ follows [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
+- **CI outlasts a slow Ubuntu mirror**: it installs packages with `scripts/apt-install.sh`, the same file as in every OxiGuitar repository. apt is stopped only when its downloads have not grown for 2 minutes, then tried again on the next mirror; while they grow, it may take as long as it needs (24 Nov 2026: fixed 5-minute tries failed jobs on mirrors at 80 to 185 kB/s).
 - The shared audio layer `oxiguitar-audio-cpal` comes from its own repository (mateusrdp/oxiguitar-audio-cpal, tag `v0.1.0`) instead of OxiGuitar's, which no longer has it (mateusrdp/oxiguitar#331); cpal 0.18.2.
 - **The manual explains the ideas behind the plugin** (its overview, with pictures), shows how to use it with screenshots, says in Architecture and strategy what it can't do yet, what is left out on purpose and where help is wanted, and has a Credits page listing every project it uses, with links and thanks. The README has a plain-words introduction and a Credits section.
 
