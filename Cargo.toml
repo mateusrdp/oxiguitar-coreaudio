@@ -24,20 +24,22 @@ oxp = []
 # The SDK, from OxiGuitar's repository at the tag of the release this is
 # built for: v0.11.0 has interface 1.4, frozen. Nothing of OxiGuitar's is on
 # crates.io.
-oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.11.0" }
+# Now at the commit of mateusrdp/oxiguitar#348 (plugin files are tar
+# archives, #347), until a release tags it.
+oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", rev = "b88431f763df71c66fe4f54f8ee4a5d0663dbec1" }
 
 [target.'cfg(target_os = "macos")'.dependencies]
 # The code the audio outputs share: a stream on one of cpal's hosts, calling
 # the core from the device's callback. Its own repository since OxiGuitar
 # 0.21.6; it uses the SDK at the same tag as this plugin (its `Service` must
 # be this plugin's type), so move the two tags together.
-oxiguitar-audio-cpal = { git = "https://github.com/mateusrdp/oxiguitar-audio-cpal", tag = "v0.1.0" }
+oxiguitar-audio-cpal = { git = "https://github.com/mateusrdp/oxiguitar-audio-cpal", rev = "d4b7a5ee60db1510d4641f9bf406a01a37e83d63" }
 cpal = { version = "0.18.2", default-features = false }
 
 [dev-dependencies]
 # The contract suite (tests/contract.rs) builds the .oxp file and checks it
 # through OxiGuitar's own plugin host.
-oxiguitar-plugin-test = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.11.0" }
+oxiguitar-plugin-test = { git = "https://github.com/mateusrdp/oxiguitar", rev = "b88431f763df71c66fe4f54f8ee4a5d0663dbec1" }
 
 # Plugins deny `unsafe` rather than forbid it: `export_plugin!` allows it on
 # the two attributes it generates, and nowhere else.
