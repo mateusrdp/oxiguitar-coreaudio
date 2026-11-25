@@ -874,8 +874,8 @@ dependencies = [
 
 [[package]]
 name = "oxiguitar-audio-cpal"
-version = "0.1.1"
-source = "git+https://github.com/mateusrdp/oxiguitar-audio-cpal?rev=d4b7a5ee60db1510d4641f9bf406a01a37e83d63#d4b7a5ee60db1510d4641f9bf406a01a37e83d63"
+version = "0.2.0"
+source = "git+https://github.com/mateusrdp/oxiguitar-audio-cpal?tag=v0.2.0#fcb08f3c88d4a42893940d826deb06767fae6bce"
 dependencies = [
  "cpal",
  "oxiguitar-plugin",
