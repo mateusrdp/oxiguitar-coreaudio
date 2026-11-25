@@ -864,7 +864,7 @@ dependencies = [
 
 [[package]]
 name = "oxiguitar-audio-coreaudio-plugin"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "cpal",
  "oxiguitar-audio-cpal",
