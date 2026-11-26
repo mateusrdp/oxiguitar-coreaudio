@@ -1,24 +1,39 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-11-08T00:00:00Z",
-  "gitCommitHash": "1eebcbfa3c23ceedb87f92500522460c3cb6d8e0",
-  "projectRoot": "/home/mat/Documents/src/oxiguitar-coreaudio",
+  "lastAnalyzedCommit": "5501a172682060ab2bbe5a2635ca5fc3b760f230",
+  "graphCommit": "5501a172682060ab2bbe5a2635ca5fc3b760f230",
+  "analyzedAt": "2026-11-26T22:00:00.000Z",
+  "graphVersion": "1.0.0",
   "stats": {
-    "totalNodes": 23,
-    "totalEdges": 17,
-    "totalLayers": 4,
-    "totalTourSteps": 9,
-    "filesAnalyzed": 18,
-    "languages": [
-      "rust",
-      "yaml",
-      "markdown",
-      "toml",
-      "shell",
-      "json"
-    ]
-  },
-  "graphHash": "56dfa69d350dc81f",
-  "fingerprintsFile": "structural-fingerprints.json",
-  "scanResultFile": "intermediate/scan-result.json"
+    "totalNodes": 66,
+    "totalEdges": 71,
+    "totalLayers": 5,
+    "totalTourStops": 5,
+    "filesScanned": 6,
+    "nodeTypes": {
+      "pipeline": 4,
+      "function": 28,
+      "config": 11,
+      "document": 14,
+      "file": 6,
+      "class": 2,
+      "struct": 1
+    },
+    "edgeTypes": {
+      "related": 2,
+      "contains": 27,
+      "depends_on": 9,
+      "references": 7,
+      "documents": 3,
+      "configures": 3,
+      "described_in": 1,
+      "uses": 1,
+      "links_to": 11,
+      "method_of": 4,
+      "tests": 1,
+      "tested_by": 1,
+      "consumed_by": 1
+    },
+    "layersCovered": 66,
+    "unassignedFileNodes": 0
+  }
 }
