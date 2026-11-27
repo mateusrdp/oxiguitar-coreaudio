@@ -874,8 +874,8 @@ dependencies = [
 
 [[package]]
 name = "oxiguitar-audio-cpal"
-version = "0.2.0"
-source = "git+https://github.com/mateusrdp/oxiguitar-audio-cpal?tag=v0.2.0#fcb08f3c88d4a42893940d826deb06767fae6bce"
+version = "0.2.1"
+source = "git+https://github.com/mateusrdp/oxiguitar-audio-cpal?tag=v0.2.1#e4d0beb305595e739c0c2544036ccaa9275033b5"
 dependencies = [
  "cpal",
  "oxiguitar-plugin",
@@ -883,8 +883,8 @@ dependencies = [
 
 [[package]]
 name = "oxiguitar-host"
-version = "0.22.0"
-source = "git+https://github.com/mateusrdp/oxiguitar?rev=b88431f763df71c66fe4f54f8ee4a5d0663dbec1#b88431f763df71c66fe4f54f8ee4a5d0663dbec1"
+version = "0.23.0"
+source = "git+https://github.com/mateusrdp/oxiguitar?tag=v0.23.0#2ac4913d845bc6d958f83dab54ebab0712a55613"
 dependencies = [
  "libc",
  "libloading",
@@ -897,7 +897,7 @@ dependencies = [
 [[package]]
 name = "oxiguitar-plugin"
 version = "1.16.0"
-source = "git+https://github.com/mateusrdp/oxiguitar?rev=b88431f763df71c66fe4f54f8ee4a5d0663dbec1#b88431f763df71c66fe4f54f8ee4a5d0663dbec1"
+source = "git+https://github.com/mateusrdp/oxiguitar?tag=v0.23.0#2ac4913d845bc6d958f83dab54ebab0712a55613"
 dependencies = [
  "oxiguitar-plugin-api",
  "serde_json",
@@ -906,7 +906,7 @@ dependencies = [
 [[package]]
 name = "oxiguitar-plugin-api"
 version = "1.16.0"
-source = "git+https://github.com/mateusrdp/oxiguitar?rev=b88431f763df71c66fe4f54f8ee4a5d0663dbec1#b88431f763df71c66fe4f54f8ee4a5d0663dbec1"
+source = "git+https://github.com/mateusrdp/oxiguitar?tag=v0.23.0#2ac4913d845bc6d958f83dab54ebab0712a55613"
 dependencies = [
  "miniz_oxide",
  "postcard",
@@ -917,7 +917,7 @@ dependencies = [
 [[package]]
 name = "oxiguitar-plugin-test"
 version = "1.16.0"
-source = "git+https://github.com/mateusrdp/oxiguitar?rev=b88431f763df71c66fe4f54f8ee4a5d0663dbec1#b88431f763df71c66fe4f54f8ee4a5d0663dbec1"
+source = "git+https://github.com/mateusrdp/oxiguitar?tag=v0.23.0#2ac4913d845bc6d958f83dab54ebab0712a55613"
 dependencies = [
  "i-slint-compiler",
  "libc",

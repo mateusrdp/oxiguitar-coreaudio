@@ -6,6 +6,10 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- **The SDK is at OxiGuitar v0.23.0 and oxiguitar-audio-cpal at v0.2.1**, both by tag in place of a commit. The README and the manual say the plugin needs OxiGuitar 0.23 or later, which reads plugin files as archives; they said 0.11.
+
 ## [0.2.0] - 2026-11-25
 
 ### Changed
